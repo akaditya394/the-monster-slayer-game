@@ -34,8 +34,9 @@
         <p v-if="winner === 'monster'">You Lost!</p>
         <p v-else-if="winner === 'player'">You Won!</p>
         <p v-else>It's a Draw!</p>
+        <button @click="startGame">Start a new game</button>
       </section>
-      <section id="controls">
+      <section id="controls" v-else>
         <button @click="attackMonster">ATTACK</button>
         <button
           :disabled="canSpecialAttackMonster"
@@ -44,7 +45,7 @@
           SPECIAL ATTACK
         </button>
         <button @click="healPlayer">HEAL</button>
-        <button>SURRENDER</button>
+        <button @click="surrender">SURRENDER</button>
       </section>
       <section id="log" class="container">
         <h2>Battle Log</h2>
